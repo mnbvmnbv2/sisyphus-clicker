@@ -62,12 +62,9 @@ def main():
                 if event.key == pygame.K_ESCAPE:
                     pygame.quit()
                     sys.exit()
-
-        # update frames
-        if current_time >= last_time + 100:
-            last_time = current_time
-            for key in frame_counter:
-                frame_counter[key].inc_frame()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                for key in frame_counter:
+                    frame_counter[key].inc_frame()
 
         screen.fill((0, 0, 0))
         # background
